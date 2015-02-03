@@ -1,0 +1,13 @@
+GitHub: 0:00
+
+LaTeX: 17:55
+
+Assignment 2: 25:30
+
+Embedding R code in RMarkdown: 38:06
+
+Embedding LaTeX code: 44:20
+
+Uploading quiz questions document: 49:29
+
+Teaching R basics: 56:30
