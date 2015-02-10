@@ -37,9 +37,22 @@ The standard normal distribution has a mean of 0 and a standard deviation of 1, 
 
 ## Lecture 2b
 
-Consider a sequence of 10 coin flips, represented by the string `TTTHTHTTTH`. Which statement gives the total number of different sequences of coin flips that could result in this number of heads?
+Consider a sequence of 10 coin flips, represented by the string `TTTHTHTTTH`. Which statement gives the total number of different sequences of 10 coin flips that could result in this number of heads?
 
 * `choose(10,3)`
 * `factorial(10)/(factorial(4)*factorial(7))`
 * `integrate(dnorm, -Inf, 0)`
 * `sapply(3:10, function(x) factorial(x))`
+
+## Lecture 2b again
+
+Consider the following code:
+`coinflips <- strsplit('TTTHTHTTTH','')[[1]]
+flip10 <- sapply(1:10000, function(i) paste(sample(coinflips),collapse=''))
+length(unique(flip10))`
+What does the variable `flip10` contain?
+
+* Ten thousand permutations, each with 3 heads and 7 tails
+* A function for flipping ten coins
+* An estimate of the number of possible permutations of the given sequence
+* A vector of 10 'H' and 'T' characters
