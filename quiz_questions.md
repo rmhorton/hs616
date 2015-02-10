@@ -25,3 +25,21 @@ v <- runif(10) < 0.5
 * numeric
 * integer
 * character
+
+## Lecture 2a
+
+The standard normal distribution has a mean of 0 and a standard deviation of 1, and the area under this curve over all possible x-values is one. What is the area under the curve of a normal probability distribution function with a standard deviation of 2?
+
+* 1
+* 2
+* $$ 2 pi $$
+* 4
+
+## Lecture 2b
+
+Consider a sequence of 10 coin flips, represented by the string `TTTHTHTTTH`. Which statement gives the total number of different sequences of coin flips that could result in this number of heads?
+
+* `choose(10,3)`
+* `factorial(10)/(factorial(4)*factorial(7))`
+* `integrate(dnorm, -Inf, 0)`
+* `sapply(3:10, function(x) factorial(x))`
