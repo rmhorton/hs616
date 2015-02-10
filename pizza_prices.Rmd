@@ -1,0 +1,71 @@
+---
+title: "Pizza price analysis"
+author: "Bob"
+date: "February 1, 2015"
+output: pdf_document
+---
+## Summary
+
+Pizza sizes are commonly given as the diameter in inches, but the diameter is not linearly related to quantity of food. here we perform calculations to compare pizzas of different sizes in cost per square inch.
+
+## Introduction
+Pizza is a disk-shaped food commonly consumed by computer programmers. Different sizes vary in diameter, but have a common thickness. The quantity of food in a given size pizza is thus proportional to its area. Since area varies as the square of diameter, the relationship between stated size (given as a diameter) and the quantity of food is not always intuitively obvious to consumers. Here we explore that relationship quantitatively.
+
+The area of a pizza is given by:
+
+$$
+A = \pi r^2
+$$
+
+Note that the equation uses the radius of the pizza, wherease menus generally describe pizza sizes by their diameters. Since the radius is half the diameter, we have:
+
+$$
+A = \pi (d/2) ^ 2
+$$
+
+```{r pizza_area}
+Area <- function(diameter) pi * (diameter/2)^2
+```
+
+```{r pizza_sizes, echo=FALSE, eval=FALSE}
+d_large <- 14
+d_medium <- 12
+d_small <- 10
+A_large <- Area(d_large)
+A_medium <- Area(d_medium)
+A_small <- Area(d_small)
+```
+
+```{r pizza_vectorized}
+pizza_size <- c( small = 10, medium = 12, large = 14, xlarge = 16 )
+pizza_price <- c( small = 6.95, medium = 12.95, large = 19.95, xlarge = 22.95 )
+pizza_area <- Area(pizza_size)
+```
+
+For our large pizza, d=`r pizza_size["large"]` inches. Using the Area function, we find that the area of a large pizza is `r round(Area(pizza_size["large"]),1)` square inches. 
+
+This kind of information is generally easier to read in a table. We start by putting it in a data frame, then format it into HTML using the `xtable` package:
+
+```{r pizza_data_frame}
+pizza_data <- data.frame(
+  size = pizza_size,
+  price = pizza_price,
+  area = round(Area(pizza_size),1),
+  price_per_square_inch = round(pizza_price/Area(pizza_size),2)
+)
+```
+
+```{r pizza_data_table, results='asis', message=FALSE}
+library(xtable)
+print(xtable(pizza_data), type='latex')
+```
+
+Sometimes trends are easiest to see in a graph:
+```{r pizza_price_graph}
+plot(price_per_square_inch ~ size, data=pizza_data, type='b')
+```
+
+
+## Discussion
+
+Calculation of area is necessary for comparison of pizza prices on a cost per square inch basis. Further investigations into crust ratio might also prove interesting.

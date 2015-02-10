@@ -1,0 +1,55 @@
+---
+title: "Latex example"
+author: "Bob"
+date: "January 31, 2015"
+output:
+  html_document:
+    keep_md: yes
+  pdf_document: default
+---
+
+This is an R Markdown document to demonstrate how to put Latex-formatted equations in an R Markdown document.
+
+
+# Finding Formulae Online
+
+Wikipedia is a great place to look up the $\LaTeX$ code for mathematical formulae.
+These equations are from the Wikipedia article on Taylor series:
+
+$$ f(x) = \sum_{n=0}^\infty a_n(x-c)^n. $$
+
+$$
+f(a)+\frac {f'(a)}{1!} (x-a)+ \frac{f''(a)}{2!} (x-a)^2+\frac{f'''(a)}{3!}(x-a)^3+ \cdots.
+$$
+
+You can look up [$LaTex$ symbols](http://latex.wikia.com/wiki/List_of_LaTeX_symbols) online.
+
+Lower case Greek letters are all represented by name in $\LaTeX$:
+$$
+\alpha \beta \gamma \delta \\
+\epsilon \zeta \eta \theta \\
+\iota \kappa \lambda \mu \\
+\nu \xi \epsilon \pi \\
+\rho \sigma \tau \upsilon \\
+\phi \chi \psi \omega
+$$
+
+Not all uppercase Greek letters are available; this is because many of them are identical to the Roman letters:
+$$ \Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta \Theta \Iota \Kappa \Lambda \Mu \Nu \Xi \Omicron \Pi \Rho \Sigma \Tau \Upsilon \Phi \Chi \Psi \Omega $$
+
+
+Here is an example of how to generate the LaTeX code in R:
+```{r greek_definitions}
+greek <- strsplit("alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu nu xi omicron pi rho sigma tau upsilon phi chi psi omega"," ")[[1]]
+ucfirst <- function(s){ substr(s,1,1) <- toupper(substr(s,1,1)); s}
+Greek <- ucfirst(greek)
+```
+```{r greek_letters, results='asis'}
+cat(
+    '$$',
+    paste0("\\", greek, collapse=" "),
+    '\\\\',
+    paste0("\\", Greek, collapse=" "),
+    '$$'
+)
+```
