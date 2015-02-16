@@ -32,7 +32,7 @@ The standard normal distribution has a mean of 0 and a standard deviation of 1, 
 
 * 1
 * 2
-* $$ 2 pi $$
+* 2 &pi;
 * 4
 
 ## Lecture 2b
