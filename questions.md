@@ -104,6 +104,7 @@ Consider the following profiling results:
 "function_C"     14.29     4.44
 ```
 If you make `function_B` 100 times faster, how much faster would you expect the program be?
+
 * less than 10% faster
 * twice as fast
 * 100 times as fast
