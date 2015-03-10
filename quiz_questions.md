@@ -28,11 +28,11 @@ v <- runif(10) < 0.5
 
 ## Lecture 2a
 
-The standard normal distribution has a mean of 0 and a standard deviation of 1, and the area under this curve over all possible x-values is one. What is the area under the curve of a normal probability distribution function with a standard deviation of 2?
+The standard normal distribution has a mean of 0 and a standard deviation of 1, and the area under this curve over all possible x-values is one. What is the area under the curve of a normal probability density function with a standard deviation of 2?
 
 * 1
 * 2
-* $$ 2 pi $$
+* 2 &pi;
 * 4
 
 ## Lecture 2b
