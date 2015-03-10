@@ -1,0 +1,23 @@
+---
+title: "Using $\LaTeX$ in Questions (but not in titles)"
+author: "Bob"
+date: "February 24, 2015"
+output: html_document
+---
+
+# Using $\LaTeX$ in Headers
+
+A block of $\LaTeX$ code can be inserted on a line by itself surrounded by double dollar signs:
+$$  \sum_{n=0} ^ {\infty} \frac {f^{(n)}(a)}{n!} \, (x-a)^{n} $$
+
+
+If you want to use $\LaTeX$ markup in-line, use single dollar signs, but be sure not to have spaces immediately inside them. You should be able to use equations in the answers to questions; for example:
+
+Which one is Bayes' Theorem?
+
+ * $P(A|B) = \frac{P(B | A)\, P(A)}{P(B)}$
+ * $e = \lim_{n\to\infty} \left( 1 + \frac{1}{n} \right)^n$
+ * E=mc<sup>2</sup>
+ 
+
+Here is further information on [Latex Equations in RMarkdown](https://support.rstudio.com/hc/en-us/articles/200486328-Equations-in-R-Markdown).
