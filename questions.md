@@ -147,7 +147,17 @@ sqldf::sqldf("SELECT * FROM A JOIN B ON a==b")
 
 Which command opens a connection to an SQLite database?
 
-* con <- dbConnect(RSQLite::SQLite(), "quizdb.sqlite")
+* dsets <- dbConnect(RSQLite::SQLite(), "datasets.sqlite")
 * res <- dbSendQuery(dsets, "select * from iris limit 10")
 * sqliteCopyDatabase(dsets, "datasets.sqlite")
 * dbListTables(dsets)
+
+## Lecture 7a
+
+Which command is equivalent to this pipeline?
+`myData %>% group_by(sex) %>% summarise(avg_price=mean(price))`
+
+* `summarize(group_by(myData, sex), avg_price=mean(price))`
+* `mean(avg_price, group_by(myData, sex), summarise)`
+* `summarise(myData[, "sex"], avg_price=mean(price), group_by(sex))`
+* `lapply(myData, function(sex){ group_by(sex); avg_price=mean(price)})`
