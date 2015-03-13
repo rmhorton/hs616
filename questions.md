@@ -159,5 +159,5 @@ Which command is equivalent to this pipeline?
 
 * `summarize(group_by(myData, sex), avg_price=mean(price))`
 * `mean(avg_price, group_by(myData, sex), summarise)`
-* `summarise(myData[, "sex"], avg_price=mean(price), group_by(sex))`
+* `summarise(myData[, "sex"], avg_price=mean(price), group_by(myData))`
 * `lapply(myData, function(sex){ group_by(sex); avg_price=mean(price)})`
