@@ -161,3 +161,20 @@ Which command is equivalent to this pipeline?
 * `mean(avg_price, group_by(myData, sex), summarise)`
 * `summarise(myData[, "sex"], avg_price=mean(price), group_by(myData))`
 * `lapply(myData, function(sex){ group_by(sex); avg_price=mean(price)})`
+
+## Lecture 7b
+
+The command `tidyr::gather(df, var, val)` produced the following result:
+`  var val
+1   a   1
+2   a   2
+3   a   3
+4   b   1
+5   b   2
+6   b   3`
+Which answer correctly defines the dataframe `df`?
+
+* `df <- data.frame(a=1:3, b=1:3)`
+* `df <- data.frame(var=letters[1:3], val=letters[1:3])`
+* `df <- data.frame(var=rep(c('a','b'), each=3), val=rep(1:3, times=2))`
+* `df <- data.frame(a=var[1:3], b=val[1:3])`
